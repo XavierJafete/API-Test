@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API M-Pesa</title>
+</head>
+<body>
+    <h1>Teste de API</h1>
+    <div id="response"></div>
+    <script>
+        // Chamada à API
+        fetch('https://sua-api.com/v1/mpesa', {
+            method: 'GET', // ou POST, conforme necessário
+            headers: {
+                'Authorization': 'Bearer SEU_TOKEN',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            document.getElementById('response').innerText = 'Erro: ' + error.message;
+        });
+    </script>
+</body>
+</html>
